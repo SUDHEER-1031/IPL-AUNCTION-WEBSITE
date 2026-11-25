@@ -8,6 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@types/bcryptjs':
+        specifier: ^2.4.6
+        version: 2.4.6
+      '@types/cors':
+        specifier: ^2.8.17
+        version: 2.8.19
+      '@types/express':
+        specifier: ^5.0.0
+        version: 5.0.6
+      '@types/jsonwebtoken':
+        specifier: ^9.0.9
+        version: 9.0.10
+      '@types/node':
+        specifier: ^22.10.2
+        version: 22.20.5
       bcryptjs:
         specifier: ^2.4.3
         version: 2.4.3
@@ -26,28 +41,13 @@ importers:
       socket.io:
         specifier: ^4.8.1
         version: 4.8.4
-    devDependencies:
-      '@types/bcryptjs':
-        specifier: ^2.4.6
-        version: 2.4.6
-      '@types/cors':
-        specifier: ^2.8.17
-        version: 2.8.19
-      '@types/express':
-        specifier: ^5.0.0
-        version: 5.0.6
-      '@types/jsonwebtoken':
-        specifier: ^9.0.9
-        version: 9.0.10
-      '@types/node':
-        specifier: ^22.10.2
-        version: 22.20.5
-      tsx:
-        specifier: ^4.19.2
-        version: 4.23.15
       typescript:
         specifier: ^5.7.2
         version: 5.9.3
+    devDependencies:
+      tsx:
+        specifier: ^4.19.2
+        version: 4.23.15
 
 packages:
 

@@ -61,13 +61,12 @@ Open **http://localhost:4000** in your browser!
 ## Deploy
 
 ### Option A: Single-App Deploy (Render / Railway — Easiest)
-Deploy the entire repo as **one Web Service**:
+Deploy the entire repo as **one Web Service** (`render.yaml` and `.node-version` for Node 22 are included):
 1. Root Directory: `.` (repository root)
-2. Build Command: `cd server && npm install && npm run build && cd ../client && npm install && npm run build`
-3. Start Command: `node server/dist/index.js`
+2. Build Command: `npm run render-build`
+3. Start Command: `npm start`
 4. Environment Variables:
    - `NODE_ENV=production`
-   - `PORT=4000` (or platform-assigned)
    - `JWT_SECRET=<long-random-secret>`
    - `DB_PATH=./data/auction.db` (attach a persistent disk so SQLite persists)
 
