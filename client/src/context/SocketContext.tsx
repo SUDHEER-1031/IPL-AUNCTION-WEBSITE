@@ -38,6 +38,8 @@ interface SocketContextValue {
   clearWatchlistAlert: () => void;
   emitAction: <T = { ok: boolean; error?: string }>(event: string, payload?: unknown) => Promise<T>;
   sendReaction: (emoji: string) => void;
+  sendVoiceSignal: (targetMemberId: string, signal: unknown) => void;
+  subscribeVoiceSignal: (handler: (payload: { fromMemberId: string; signal: unknown }) => void) => () => void;
 }
 
 const SocketContext = createContext<SocketContextValue | null>(null);
@@ -56,6 +58,9 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
 
   const socketRef = useRef<Socket | null>(null);
   const prevBidCountRef = useRef<number>(0);
+  const voiceHandlersRef = useRef(
+    new Set<(payload: { fromMemberId: string; signal: unknown }) => void>(),
+  );
 
   const disconnectSocket = useCallback(() => {
     if (socketRef.current) {
@@ -133,6 +138,10 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
         setIdentity(null);
         setRoomState(null);
         socket.disconnect();
+      });
+
+      socket.on('voice:signal', (payload: { fromMemberId: string; signal: unknown }) => {
+        voiceHandlersRef.current.forEach((fn) => fn(payload));
       });
 
       socketRef.current = socket;
@@ -249,6 +258,20 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
     socketRef.current?.emit('reaction:send', { emoji });
   }, []);
 
+  const sendVoiceSignal = useCallback((targetMemberId: string, signal: unknown) => {
+    socketRef.current?.emit('voice:signal', { targetMemberId, signal });
+  }, []);
+
+  const subscribeVoiceSignal = useCallback(
+    (handler: (payload: { fromMemberId: string; signal: unknown }) => void) => {
+      voiceHandlersRef.current.add(handler);
+      return () => {
+        voiceHandlersRef.current.delete(handler);
+      };
+    },
+    [],
+  );
+
   return (
     <SocketContext.Provider
       value={{
@@ -268,6 +291,8 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
         clearWatchlistAlert: () => setWatchlistAlert(null),
         emitAction,
         sendReaction,
+        sendVoiceSignal,
+        subscribeVoiceSignal,
       }}
     >
       {children}

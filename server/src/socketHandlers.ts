@@ -125,6 +125,23 @@ export function registerSocketHandlers(io: Server): void {
       roomManager.sendReaction(roomCode, memberId, String(payload?.emoji ?? ''));
     });
 
+    socket.on('voice:toggle', (payload: { active: boolean }, cb?: (res: unknown) => void) => {
+      const res = roomManager.setVoiceActive(roomCode, memberId, Boolean(payload?.active));
+      cb?.(res);
+    });
+
+    socket.on(
+      'voice:signal',
+      (payload: { targetMemberId: string; signal: unknown }) => {
+        if (!payload?.targetMemberId || !payload?.signal) return;
+        if (!roomManager.isMemberOnline(roomCode, payload.targetMemberId)) return;
+        io.to(`member:${payload.targetMemberId}`).emit('voice:signal', {
+          fromMemberId: memberId,
+          signal: payload.signal,
+        });
+      },
+    );
+
     socket.on('disconnect', () => {
       const stillActiveSockets = io.sockets.adapter.rooms.get(`member:${memberId}`);
       if (!stillActiveSockets || stillActiveSockets.size === 0) {

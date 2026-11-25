@@ -1,16 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Star, X } from 'lucide-react';
 import { ThemeProvider } from './context/ThemeContext';
 import { SocketProvider, useSocket } from './context/SocketContext';
-import { Navbar, type AppView } from './components/Navbar';
+import { VoiceProvider } from './context/VoiceContext';
+import { Navbar } from './components/Navbar';
 import { SoldOverlay } from './components/SoldOverlay';
-import { WatchlistModal } from './components/WatchlistModal';
+import { ExitConfirmModal } from './components/ExitConfirmModal';
 import { LandingPage } from './pages/LandingPage';
-import { LobbyPage } from './pages/LobbyPage';
-import { AuctionPage } from './pages/AuctionPage';
-import { SquadsPage } from './pages/SquadsPage';
-import { SummaryPage } from './pages/SummaryPage';
+import { UnifiedArenaPage } from './pages/UnifiedArenaPage';
 import { formatLakhs } from './utils/format';
 
 function ArenaShell() {
@@ -25,19 +23,35 @@ function ArenaShell() {
     leaveRoom,
     clearResolution,
     clearWatchlistAlert,
-    emitAction,
   } = useSocket();
 
-  const [activeView, setActiveView] = useState<AppView>('AUCTION');
-  const [watchlistOpen, setWatchlistOpen] = useState(false);
+  const [exitPromptOpen, setExitPromptOpen] = useState(false);
+  const historyPushedRef = useRef(false);
 
+  // Guard browser Back button while inside a room ("Are you sure you want to exit this room?")
   useEffect(() => {
-    if (roomState?.status === 'ENDED') {
-      setActiveView('SUMMARY');
-    } else if (roomState?.status === 'LIVE') {
-      setActiveView('AUCTION');
+    if (!roomState) {
+      historyPushedRef.current = false;
+      return;
     }
-  }, [roomState?.status]);
+
+    if (!historyPushedRef.current) {
+      window.history.pushState({ inAuctionRoom: true }, '');
+      historyPushedRef.current = true;
+    }
+
+    const handlePopState = () => {
+      if (roomState) {
+        window.history.pushState({ inAuctionRoom: true }, '');
+        setExitPromptOpen(true);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [roomState]);
 
   useEffect(() => {
     if (!watchlistAlert) return;
@@ -45,17 +59,19 @@ function ArenaShell() {
     return () => clearTimeout(t);
   }, [watchlistAlert, clearWatchlistAlert]);
 
+  const handleConfirmExit = useCallback(() => {
+    setExitPromptOpen(false);
+    leaveRoom();
+  }, [leaveRoom]);
+
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors">
       <Navbar
         roomState={roomState}
         role={identity?.role ?? null}
         connected={connected}
-        activeView={activeView}
-        setActiveView={setActiveView}
         watchlistCount={watchlist.length}
-        onOpenWatchlist={() => setWatchlistOpen(true)}
-        onLeave={leaveRoom}
+        onRequestExit={() => setExitPromptOpen(true)}
       />
 
       {/* Watchlist Alert Toast */}
@@ -87,27 +103,17 @@ function ArenaShell() {
         </div>
       ) : !roomState ? (
         <LandingPage />
-      ) : roomState.status === 'LOBBY' ? (
-        <LobbyPage />
-      ) : activeView === 'SQUADS' ? (
-        <SquadsPage />
-      ) : activeView === 'SUMMARY' ? (
-        <SummaryPage />
       ) : (
-        <AuctionPage />
+        <UnifiedArenaPage />
       )}
 
       <SoldOverlay resolution={lastResolution} onDismiss={clearResolution} />
 
-      {roomState && (
-        <WatchlistModal
-          open={watchlistOpen}
-          onClose={() => setWatchlistOpen(false)}
-          players={roomState.allRoomPlayers}
-          watchlist={watchlist}
-          onToggleWatchlist={(playerId) => void emitAction('watchlist:toggle', { playerId })}
-        />
-      )}
+      <ExitConfirmModal
+        open={exitPromptOpen}
+        onCancel={() => setExitPromptOpen(false)}
+        onConfirm={handleConfirmExit}
+      />
     </div>
   );
 }
@@ -116,7 +122,9 @@ export default function App() {
   return (
     <ThemeProvider>
       <SocketProvider>
-        <ArenaShell />
+        <VoiceProvider>
+          <ArenaShell />
+        </VoiceProvider>
       </SocketProvider>
     </ThemeProvider>
   );

@@ -24,6 +24,7 @@ export interface MemberView {
   teamId: string | null;
   role: MemberRole;
   isConnected: boolean;
+  isVoiceActive: boolean;
 }
 
 export interface RoomPlayerView {
@@ -112,6 +113,7 @@ interface RoomRuntime {
   timeoutHandle: ReturnType<typeof setTimeout> | null;
   transitioning: boolean;
   commentary: string[];
+  voiceActive: Set<string>;
 }
 
 const CODE_ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -159,6 +161,7 @@ export class RoomManager {
         timeoutHandle: null,
         transitioning: false,
         commentary: ['Welcome to IPL Auction Arena! Waiting for franchises to take their seats.'],
+        voiceActive: new Set<string>(),
       };
       this.runtimes.set(roomCode, rt);
     }
@@ -257,14 +260,6 @@ export class RoomManager {
     }
 
     const isSpectator = Boolean(input.spectator);
-    if (!isSpectator && room.status !== 'LOBBY') {
-      return {
-        ok: false,
-        error: 'Auction has already started — new players cannot join. Use Spectator Mode or reconnect with your existing session.',
-        status: 403,
-      };
-    }
-
     const memberId = crypto.randomUUID();
     const role: MemberRole = isSpectator ? 'SPECTATOR' : 'PLAYER';
     const cleanName = input.displayName.trim();
@@ -277,7 +272,11 @@ export class RoomManager {
     const token = signMemberToken({ memberId, roomCode: code, role, displayName: cleanName });
     this.pushCommentary(
       code,
-      isSpectator ? `${cleanName} joined as a spectator.` : `${cleanName} entered the auction lobby.`,
+      isSpectator
+        ? `${cleanName} joined as a spectator.`
+        : room.status === 'LOBBY'
+          ? `${cleanName} entered the auction lobby.`
+          : `${cleanName} joined the live auction room.`,
     );
     this.broadcastState(code);
 
@@ -316,14 +315,38 @@ export class RoomManager {
       memberId,
       roomCode,
     );
+    if (!connected) {
+      this.getRuntime(roomCode).voiceActive.delete(memberId);
+    }
     this.broadcastState(roomCode);
+  }
+
+  setVoiceActive(roomCode: string, memberId: string, active: boolean): { ok: boolean; error?: string } {
+    const member = this.getMember(roomCode, memberId);
+    if (!member || member.isKicked) return { ok: false, error: 'Unauthorized' };
+    const rt = this.getRuntime(roomCode);
+    if (active) {
+      rt.voiceActive.add(memberId);
+    } else {
+      rt.voiceActive.delete(memberId);
+    }
+    this.broadcastState(roomCode);
+    return { ok: true };
+  }
+
+  isMemberOnline(roomCode: string, memberId: string): boolean {
+    const db = getDb();
+    const row = db
+      .prepare('SELECT is_connected, is_kicked FROM members WHERE id = ? AND room_code = ?')
+      .get(memberId, roomCode) as { is_connected: number; is_kicked: number } | undefined;
+    return Boolean(row && row.is_connected === 1 && row.is_kicked === 0);
   }
 
   selectTeam(roomCode: string, memberId: string, teamId: string): { ok: boolean; error?: string } {
     const db = getDb();
     const room = db.prepare('SELECT status FROM rooms WHERE code = ?').get(roomCode) as { status: RoomStatus } | undefined;
-    if (!room || room.status !== 'LOBBY') {
-      return { ok: false, error: 'Teams can only be selected in the lobby' };
+    if (!room || room.status === 'ENDED') {
+      return { ok: false, error: 'Auction has already ended' };
     }
     if (!IPL_TEAMS.some((t) => t.id === teamId)) {
       return { ok: false, error: 'Invalid IPL team' };
@@ -332,6 +355,9 @@ export class RoomManager {
     const member = this.getMember(roomCode, memberId);
     if (!member || member.isKicked || member.role === 'SPECTATOR') {
       return { ok: false, error: 'Spectators or removed members cannot pick a team' };
+    }
+    if (room.status !== 'LOBBY' && member.teamId !== null) {
+      return { ok: false, error: 'Cannot switch teams after the auction has started' };
     }
 
     const taken = db
@@ -354,10 +380,23 @@ export class RoomManager {
       | undefined;
     if (!room) return { ok: false, error: 'Room not found' };
     if (room.host_member_id !== hostMemberId) return { ok: false, error: 'Only host can change timer settings' };
-    if (room.status !== 'LOBBY') return { ok: false, error: 'Timer can only be changed before auction starts' };
+    if (room.status === 'ENDED') return { ok: false, error: 'Auction has already ended' };
     if (![5, 10, 15].includes(seconds)) return { ok: false, error: 'Timer must be 5, 10, or 15 seconds' };
 
     db.prepare('UPDATE rooms SET timer_seconds = ? WHERE code = ?').run(seconds, roomCode);
+
+    const rt = this.getRuntime(roomCode);
+    const newMaxMs = seconds * 1000;
+    if ((room.status === 'LIVE' || room.status === 'ACCELERATED') && rt.timerEndsAt !== null && !rt.transitioning) {
+      const remaining = rt.timerEndsAt - Date.now();
+      if (remaining > newMaxMs) {
+        this.startTimer(roomCode, newMaxMs);
+      }
+    } else if (room.status === 'PAUSED' && rt.pausedRemainingMs !== null && rt.pausedRemainingMs > newMaxMs) {
+      rt.pausedRemainingMs = newMaxMs;
+    }
+
+    this.pushCommentary(roomCode, `Host changed the bid timer to ${seconds}s.`);
     this.broadcastState(roomCode);
     return { ok: true };
   }
@@ -378,6 +417,7 @@ export class RoomManager {
       targetMemberId,
       roomCode,
     );
+    this.getRuntime(roomCode).voiceActive.delete(targetMemberId);
 
     if (this.io) {
       this.io.to(`member:${targetMemberId}`).emit('member:kicked', {
@@ -1007,6 +1047,7 @@ export class RoomManager {
       teamId: m.team_id,
       role: m.role,
       isConnected: m.is_connected === 1,
+      isVoiceActive: m.is_connected === 1 && rt.voiceActive.has(m.id),
     }));
 
     const rpRows = db

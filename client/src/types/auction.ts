@@ -34,6 +34,7 @@ export interface MemberView {
   teamId: string | null;
   role: MemberRole;
   isConnected: boolean;
+  isVoiceActive?: boolean;
 }
 
 export interface TeamView {
