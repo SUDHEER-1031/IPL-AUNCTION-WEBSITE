@@ -1,0 +1,10 @@
+{
+  "name": "ipl-auction-arena",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm --dir client build && pnpm --dir server build",
+    "start": "node server/dist/index.js",
+    "test": "node --test server/tests/auctionLogic.test.ts"
+  }
+}

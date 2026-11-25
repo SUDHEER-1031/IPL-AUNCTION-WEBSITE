@@ -33,34 +33,45 @@ To use official or licensed player images:
 
 ---
 
-## Run Locally
+## Run Locally (Unified Single App — Recommended)
 
 Requires **Node.js 22+** (uses built-in `node:sqlite`).
 
-### 1. Backend (`server/`)
-```bash
-cd server
-cp .env.example .env
-npm install
-npm test
-npm run dev
-```
-Backend runs at `http://localhost:4000`.
+Both the React frontend and Express + Socket.IO backend run together from **one server on one port (`http://localhost:4000`)**:
 
-### 2. Frontend (`client/`)
 ```bash
-cd client
-cp .env.example .env
-npm install
-npm run dev
+# 1. Install dependencies
+cd server && npm install && cd ../client && npm install && cd ..
+
+# 2. Configure server env
+cp server/.env.example server/.env
+
+# 3. Build frontend + backend into one unified app and start
+npm run build
+npm start
 ```
-Frontend runs at `http://localhost:5173`.
+Open **http://localhost:4000** in your browser!
+
+### Separate Dev Servers (Optional for Frontend HMR)
+- Backend (`server/`): `npm run dev` on `http://localhost:4000`
+- Frontend (`client/`): `npm run dev` on `http://localhost:5173` (proxies `/api` and `/socket.io` to `4000`)
 
 ---
 
 ## Deploy
 
-### Backend (Render / Railway)
+### Option A: Single-App Deploy (Render / Railway — Easiest)
+Deploy the entire repo as **one Web Service**:
+1. Root Directory: `.` (repository root)
+2. Build Command: `cd server && npm install && npm run build && cd ../client && npm install && npm run build`
+3. Start Command: `node server/dist/index.js`
+4. Environment Variables:
+   - `NODE_ENV=production`
+   - `PORT=4000` (or platform-assigned)
+   - `JWT_SECRET=<long-random-secret>`
+   - `DB_PATH=./data/auction.db` (attach a persistent disk so SQLite persists)
+
+### Option B: Split Deploy (Render/Railway Backend + Vercel Frontend)
 1. Create a new Web Service pointing to `server/`.
 2. Set Build Command: `npm install && npm run build`
 3. Set Start Command: `npm start`
