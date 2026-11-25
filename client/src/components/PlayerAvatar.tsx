@@ -23,10 +23,10 @@ export function PlayerAvatar({ name, photo, role, teamColor, size = 'xl' }: Play
 
   const sizeClass =
     size === 'sm'
-      ? 'w-10 h-10 text-xs rounded-xl'
+      ? 'w-9 h-9 text-xs rounded-xl'
       : size === 'md'
-        ? 'w-14 h-14 text-base rounded-2xl'
-        : 'w-28 h-28 sm:w-32 sm:h-32 text-3xl rounded-3xl';
+        ? 'w-12 h-12 text-sm rounded-xl'
+        : 'w-16 h-16 sm:w-20 sm:h-20 text-xl rounded-2xl';
 
   if (photo && !imgFailed) {
     return (

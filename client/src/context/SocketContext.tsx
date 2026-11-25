@@ -75,7 +75,10 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
       disconnectSocket();
       const socket = io(SOCKET_URL || window.location.origin, {
         auth: { token },
-        transports: ['websocket', 'polling'],
+        transports: ['polling', 'websocket'],
+        reconnection: true,
+        reconnectionAttempts: Infinity,
+        reconnectionDelay: 1000,
       });
 
       socket.on('connect', () => {
@@ -243,11 +246,22 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
       return new Promise((resolve) => {
         const sock = socketRef.current;
         if (!sock || !sock.connected) {
-          resolve({ ok: false, error: 'Not connected to server' } as T);
+          resolve({ ok: false, error: 'Connection lost — reconnecting to auction...' } as T);
           return;
         }
+        let settled = false;
+        const timer = setTimeout(() => {
+          if (!settled) {
+            settled = true;
+            resolve({ ok: false, error: 'Request timed out — please tap again.' } as T);
+          }
+        }, 4000);
         sock.emit(event, payload, (res: T) => {
-          resolve(res);
+          if (!settled) {
+            settled = true;
+            clearTimeout(timer);
+            resolve(res);
+          }
         });
       });
     },

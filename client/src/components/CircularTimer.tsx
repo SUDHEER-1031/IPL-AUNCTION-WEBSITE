@@ -54,7 +54,7 @@ export function CircularTimer({
   const isDanger = !isPaused && secondsDisplay <= 3 && secondsDisplay > 0;
   const isWarning = !isPaused && !isDanger && secondsDisplay <= 5;
 
-  const radius = 44;
+  const radius = 42;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference * (1 - progress);
 
@@ -68,7 +68,7 @@ export function CircularTimer({
 
   return (
     <div
-      className={`relative w-28 h-28 flex items-center justify-center select-none ${
+      className={`relative w-18 h-18 sm:w-20 sm:h-20 flex items-center justify-center select-none ${
         isDanger ? 'animate-pulse scale-105 transition-transform' : ''
       }`}
     >
@@ -97,7 +97,7 @@ export function CircularTimer({
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span
-          className={`font-display text-3xl font-black tabular-nums ${
+          className={`font-display text-xl font-black tabular-nums leading-none ${
             isDanger
               ? 'text-red-500'
               : isWarning
@@ -107,7 +107,7 @@ export function CircularTimer({
         >
           {isPaused ? `${secondsDisplay}s` : secondsDisplay}
         </span>
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+        <span className="text-[9px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mt-0.5">
           {isPaused ? 'PAUSED' : 'SEC'}
         </span>
       </div>

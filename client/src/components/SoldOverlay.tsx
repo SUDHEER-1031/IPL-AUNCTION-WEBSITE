@@ -75,17 +75,17 @@ export function SoldOverlay({ resolution, onDismiss }: SoldOverlayProps) {
               {resolution.outcome === 'SOLD' ? 'SOLD!' : 'UNSOLD'}
             </div>
 
-            <h3 className="font-display text-3xl font-black text-white mb-2">
+            <h3 className="font-display text-2xl font-black text-white mb-2">
               {resolution.player.name}
             </h3>
 
             {resolution.outcome === 'SOLD' && resolution.priceLakhs !== null ? (
-              <div className="mt-4 flex flex-col items-center gap-2">
-                <div className="flex items-center gap-3 bg-white/10 px-4 py-2.5 rounded-2xl border border-white/15">
+              <div className="mt-3 flex flex-col items-center gap-2">
+                <div className="flex items-center gap-2.5 bg-white/10 px-3.5 py-2 rounded-xl border border-white/15">
                   <TeamCrest teamId={resolution.teamId} size="sm" />
-                  <span className="font-bold text-white text-lg">{resolution.teamName}</span>
+                  <span className="font-bold text-white text-sm">{resolution.teamName}</span>
                 </div>
-                <div className="font-display text-3xl font-black text-amber-400 mt-1">
+                <div className="font-display text-2xl font-black text-amber-400 mt-0.5">
                   {formatLakhs(resolution.priceLakhs)}
                 </div>
               </div>

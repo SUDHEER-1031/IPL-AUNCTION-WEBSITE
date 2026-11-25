@@ -15,7 +15,6 @@ function ArenaShell() {
   const {
     identity,
     roomState,
-    watchlist,
     connected,
     lastResolution,
     watchlistAlert,
@@ -70,7 +69,6 @@ function ArenaShell() {
         roomState={roomState}
         role={identity?.role ?? null}
         connected={connected}
-        watchlistCount={watchlist.length}
         onRequestExit={() => setExitPromptOpen(true)}
       />
 
