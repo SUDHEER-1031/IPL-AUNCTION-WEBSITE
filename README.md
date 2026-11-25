@@ -63,7 +63,7 @@ Open **http://localhost:4000** in your browser!
 ### Option A: Single-App Deploy (Render / Railway — Easiest)
 Deploy the entire repo as **one Web Service** (`render.yaml` and `.node-version` for Node 22 are included):
 1. Root Directory: `.` (repository root)
-2. Build Command: `npm run render-build`
+2. Build Command: `npm run build` (or `yarn build`)
 3. Start Command: `npm start`
 4. Environment Variables:
    - `NODE_ENV=production`

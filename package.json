@@ -6,8 +6,8 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "render-build": "npm --prefix server install --include=dev && npm --prefix server run build && npm --prefix client install --include=dev && npm --prefix client run build",
-    "build": "pnpm --dir client build && pnpm --dir server build",
+    "build": "npm --prefix server install --include=dev && npm --prefix server run build && npm --prefix client install --include=dev && npm --prefix client run build",
+    "render-build": "npm run build",
     "start": "node server/dist/index.js",
     "test": "node --test server/tests/auctionLogic.test.ts"
   }
