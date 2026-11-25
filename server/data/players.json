@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "p001",
+    "name": "Virat Kohli",
+    "photo": "/players/virat-kohli.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 252, "runs": 8004, "strikeRate": 131.97, "battingAverage": 38.67, "wickets": 4, "economy": 8.8, "bestFigures": "1/13", "iplTitles": 0 }
+  },
+  {
+    "id": "p002",
+    "name": "Rohit Sharma",
+    "photo": "/players/rohit-sharma.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 257, "runs": 6628, "strikeRate": 131.14, "battingAverage": 29.72, "wickets": 15, "economy": 8.02, "bestFigures": "4/6", "iplTitles": 6 }
+  },
+  {
+    "id": "p003",
+    "name": "Suryakumar Yadav",
+    "photo": "/players/suryakumar-yadav.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 150, "runs": 3594, "strikeRate": 145.32, "battingAverage": 32.09, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 2 }
+  },
+  {
+    "id": "p004",
+    "name": "Shubman Gill",
+    "photo": "/players/shubman-gill.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 103, "runs": 3216, "strikeRate": 135.7, "battingAverage": 37.84, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 1 }
+  },
+  {
+    "id": "p005",
+    "name": "Yashasvi Jaiswal",
+    "photo": "/players/yashasvi-jaiswal.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 53, "runs": 1607, "strikeRate": 150.61, "battingAverage": 32.14, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p006",
+    "name": "Ruturaj Gaikwad",
+    "photo": "/players/ruturaj-gaikwad.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 66, "runs": 2380, "strikeRate": 136.86, "battingAverage": 41.75, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 2 }
+  },
+  {
+    "id": "p007",
+    "name": "Shreyas Iyer",
+    "photo": "/players/shreyas-iyer.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 115, "runs": 3127, "strikeRate": 127.48, "battingAverage": 32.24, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 1 }
+  },
+  {
+    "id": "p008",
+    "name": "Suresh Raina",
+    "photo": "/players/suresh-raina.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 205, "runs": 5528, "strikeRate": 136.76, "battingAverage": 32.52, "wickets": 25, "economy": 7.39, "bestFigures": "2/0", "iplTitles": 4 }
+  },
+  {
+    "id": "p009",
+    "name": "Shikhar Dhawan",
+    "photo": "/players/shikhar-dhawan.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 222, "runs": 6769, "strikeRate": 127.14, "battingAverage": 35.26, "wickets": 4, "economy": 8.25, "bestFigures": "1/7", "iplTitles": 1 }
+  },
+  {
+    "id": "p010",
+    "name": "Rinku Singh",
+    "photo": "/players/rinku-singh.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 46, "runs": 893, "strikeRate": 143.34, "battingAverage": 30.79, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 1 }
+  },
+  {
+    "id": "p011",
+    "name": "Tilak Varma",
+    "photo": "/players/tilak-varma.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 38, "runs": 1156, "strikeRate": 146.33, "battingAverage": 39.86, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p012",
+    "name": "Shivam Dube",
+    "photo": "/players/shivam-dube.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 65, "runs": 1502, "strikeRate": 146.68, "battingAverage": 30.04, "wickets": 5, "economy": 9.3, "bestFigures": "2/15", "iplTitles": 1 }
+  },
+  {
+    "id": "p013",
+    "name": "Rajat Patidar",
+    "photo": "/players/rajat-patidar.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 27, "runs": 799, "strikeRate": 158.85, "battingAverage": 34.74, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p014",
+    "name": "Sai Sudharsan",
+    "photo": "/players/sai-sudharsan.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 25, "runs": 1034, "strikeRate": 139.17, "battingAverage": 47.0, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 1 }
+  },
+  {
+    "id": "p015",
+    "name": "Ajinkya Rahane",
+    "photo": "/players/ajinkya-rahane.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 185, "runs": 4642, "strikeRate": 123.42, "battingAverage": 30.14, "wickets": 1, "economy": 5.0, "bestFigures": "1/5", "iplTitles": 1 }
+  },
+  {
+    "id": "p016",
+    "name": "Gautam Gambhir",
+    "photo": "/players/gautam-gambhir.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 154, "runs": 4217, "strikeRate": 123.88, "battingAverage": 31.01, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 2 }
+  },
+  {
+    "id": "p017",
+    "name": "Virender Sehwag",
+    "photo": "/players/virender-sehwag.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 104, "runs": 2728, "strikeRate": 155.44, "battingAverage": 27.56, "wickets": 6, "economy": 10.42, "bestFigures": "2/18", "iplTitles": 0 }
+  },
+  {
+    "id": "p018",
+    "name": "Ambati Rayudu",
+    "photo": "/players/ambati-rayudu.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 204, "runs": 4348, "strikeRate": 127.54, "battingAverage": 28.23, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 6 }
+  },
+  {
+    "id": "p019",
+    "name": "Shashank Singh",
+    "photo": "/players/shashank-singh.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 24, "runs": 423, "strikeRate": 161.45, "battingAverage": 38.45, "wickets": 1, "economy": 8.5, "bestFigures": "1/10", "iplTitles": 0 }
+  },
+  {
+    "id": "p020",
+    "name": "Riyan Parag",
+    "photo": "/players/riyan-parag.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 70, "runs": 1173, "strikeRate": 135.14, "battingAverage": 24.44, "wickets": 4, "economy": 9.88, "bestFigures": "1/12", "iplTitles": 0 }
+  },
+  {
+    "id": "p021",
+    "name": "Prithvi Shaw",
+    "photo": "/players/prithvi-shaw.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 79, "runs": 1892, "strikeRate": 147.47, "battingAverage": 23.95, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p022",
+    "name": "Angkrish Raghuvanshi",
+    "photo": "/players/angkrish-raghuvanshi.jpg",
+    "role": "Batter",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 20,
+    "stats": { "matches": 10, "runs": 163, "strikeRate": 155.24, "battingAverage": 23.29, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 1 }
+  },
+  {
+    "id": "p023",
+    "name": "AB de Villiers",
+    "photo": "/players/ab-de-villiers.jpg",
+    "role": "Batter",
+    "nationality": "South Africa",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 184, "runs": 5162, "strikeRate": 151.69, "battingAverage": 39.71, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p024",
+    "name": "Chris Gayle",
+    "photo": "/players/chris-gayle.jpg",
+    "role": "Batter",
+    "nationality": "West Indies",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 142, "runs": 4965, "strikeRate": 148.96, "battingAverage": 39.72, "wickets": 18, "economy": 7.89, "bestFigures": "2/10", "iplTitles": 0 }
+  },
+  {
+    "id": "p025",
+    "name": "David Warner",
+    "photo": "/players/david-warner.jpg",
+    "role": "Batter",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 184, "runs": 6565, "strikeRate": 139.77, "battingAverage": 40.52, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 1 }
+  },
+  {
+    "id": "p026",
+    "name": "Travis Head",
+    "photo": "/players/travis-head.jpg",
+    "role": "Batter",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 25, "runs": 772, "strikeRate": 173.87, "battingAverage": 36.76, "wickets": 2, "economy": 10.67, "bestFigures": "1/16", "iplTitles": 0 }
+  },
+  {
+    "id": "p027",
+    "name": "Faf du Plessis",
+    "photo": "/players/faf-du-plessis.jpg",
+    "role": "Batter",
+    "nationality": "South Africa",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 145, "runs": 4571, "strikeRate": 136.37, "battingAverage": 35.99, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 2 }
+  },
+  {
+    "id": "p028",
+    "name": "David Miller",
+    "photo": "/players/david-miller.jpg",
+    "role": "Batter",
+    "nationality": "South Africa",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 130, "runs": 2924, "strikeRate": 139.24, "battingAverage": 36.55, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 1 }
+  },
+  {
+    "id": "p029",
+    "name": "Shimron Hetmyer",
+    "photo": "/players/shimron-hetmyer.jpg",
+    "role": "Batter",
+    "nationality": "West Indies",
+    "isOverseas": true,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 72, "runs": 1243, "strikeRate": 153.08, "battingAverage": 31.87, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p030",
+    "name": "Tristan Stubbs",
+    "photo": "/players/tristan-stubbs.jpg",
+    "role": "Batter",
+    "nationality": "South Africa",
+    "isOverseas": true,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 18, "runs": 405, "strikeRate": 173.82, "battingAverage": 40.5, "wickets": 4, "economy": 6.5, "bestFigures": "2/11", "iplTitles": 0 }
+  },
+  {
+    "id": "p031",
+    "name": "Jake Fraser-McGurk",
+    "photo": "/players/jake-fraser-mcgurk.jpg",
+    "role": "Batter",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 9, "runs": 330, "strikeRate": 234.04, "battingAverage": 36.67, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p032",
+    "name": "Devon Conway",
+    "photo": "/players/devon-conway.jpg",
+    "role": "Batter",
+    "nationality": "New Zealand",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 23, "runs": 924, "strikeRate": 141.28, "battingAverage": 48.63, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 1 }
+  },
+  {
+    "id": "p033",
+    "name": "Tim David",
+    "photo": "/players/tim-david.jpg",
+    "role": "Batter",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 38, "runs": 659, "strikeRate": 170.28, "battingAverage": 29.95, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p034",
+    "name": "Aiden Markram",
+    "photo": "/players/aiden-markram.jpg",
+    "role": "Batter",
+    "nationality": "South Africa",
+    "isOverseas": true,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 44, "runs": 995, "strikeRate": 129.73, "battingAverage": 30.15, "wickets": 2, "economy": 9.0, "bestFigures": "1/16", "iplTitles": 0 }
+  },
+  {
+    "id": "p035",
+    "name": "Michael Hussey",
+    "photo": "/players/michael-hussey.jpg",
+    "role": "Batter",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 59, "runs": 1977, "strikeRate": 122.64, "battingAverage": 38.76, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 2 }
+  },
+  {
+    "id": "p036",
+    "name": "Rovman Powell",
+    "photo": "/players/rovman-powell.jpg",
+    "role": "Batter",
+    "nationality": "West Indies",
+    "isOverseas": true,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 27, "runs": 360, "strikeRate": 146.94, "battingAverage": 20.0, "wickets": 1, "economy": 8.5, "bestFigures": "1/18", "iplTitles": 0 }
+  },
+  {
+    "id": "p037",
+    "name": "Jasprit Bumrah",
+    "photo": "/players/jasprit-bumrah.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 133, "runs": 69, "strikeRate": 69.0, "battingAverage": 8.63, "wickets": 165, "economy": 7.3, "bestFigures": "5/10", "iplTitles": 5 }
+  },
+  {
+    "id": "p038",
+    "name": "Mohammed Shami",
+    "photo": "/players/mohammed-shami.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 110, "runs": 74, "strikeRate": 89.16, "battingAverage": 6.17, "wickets": 127, "economy": 8.44, "bestFigures": "4/11", "iplTitles": 1 }
+  },
+  {
+    "id": "p039",
+    "name": "Arshdeep Singh",
+    "photo": "/players/arshdeep-singh.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 65, "runs": 29, "strikeRate": 76.32, "battingAverage": 7.25, "wickets": 76, "economy": 9.03, "bestFigures": "5/32", "iplTitles": 0 }
+  },
+  {
+    "id": "p040",
+    "name": "Mohammed Siraj",
+    "photo": "/players/mohammed-siraj.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 93, "runs": 109, "strikeRate": 91.6, "battingAverage": 12.11, "wickets": 93, "economy": 8.65, "bestFigures": "4/21", "iplTitles": 0 }
+  },
+  {
+    "id": "p041",
+    "name": "Bhuvneshwar Kumar",
+    "photo": "/players/bhuvneshwar-kumar.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 176, "runs": 306, "strikeRate": 98.39, "battingAverage": 9.27, "wickets": 181, "economy": 7.56, "bestFigures": "5/19", "iplTitles": 1 }
+  },
+  {
+    "id": "p042",
+    "name": "Zaheer Khan",
+    "photo": "/players/zaheer-khan.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 100, "runs": 117, "strikeRate": 86.03, "battingAverage": 8.36, "wickets": 102, "economy": 7.59, "bestFigures": "4/17", "iplTitles": 0 }
+  },
+  {
+    "id": "p043",
+    "name": "Harshal Patel",
+    "photo": "/players/harshal-patel.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 106, "runs": 259, "strikeRate": 125.12, "battingAverage": 10.36, "wickets": 135, "economy": 8.74, "bestFigures": "5/27", "iplTitles": 0 }
+  },
+  {
+    "id": "p044",
+    "name": "Deepak Chahar",
+    "photo": "/players/deepak-chahar.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 81, "runs": 80, "strikeRate": 129.03, "battingAverage": 11.43, "wickets": 77, "economy": 7.98, "bestFigures": "4/13", "iplTitles": 3 }
+  },
+  {
+    "id": "p045",
+    "name": "T Natarajan",
+    "photo": "/players/t-natarajan.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 61, "runs": 3, "strikeRate": 60.0, "battingAverage": 3.0, "wickets": 67, "economy": 8.83, "bestFigures": "4/19", "iplTitles": 0 }
+  },
+  {
+    "id": "p046",
+    "name": "Avesh Khan",
+    "photo": "/players/avesh-khan.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 63, "runs": 41, "strikeRate": 136.67, "battingAverage": 8.2, "wickets": 74, "economy": 8.92, "bestFigures": "4/24", "iplTitles": 0 }
+  },
+  {
+    "id": "p047",
+    "name": "Harshit Rana",
+    "photo": "/players/harshit-rana.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 21, "runs": 2, "strikeRate": 50.0, "battingAverage": 2.0, "wickets": 25, "economy": 9.05, "bestFigures": "3/24", "iplTitles": 1 }
+  },
+  {
+    "id": "p048",
+    "name": "Mayank Yadav",
+    "photo": "/players/mayank-yadav.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 4, "runs": 0, "strikeRate": 0, "battingAverage": 0, "wickets": 7, "economy": 6.99, "bestFigures": "3/14", "iplTitles": 0 }
+  },
+  {
+    "id": "p049",
+    "name": "Khaleel Ahmed",
+    "photo": "/players/khaleel-ahmed.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 57, "runs": 1, "strikeRate": 20.0, "battingAverage": 0.5, "wickets": 74, "economy": 8.81, "bestFigures": "3/21", "iplTitles": 0 }
+  },
+  {
+    "id": "p050",
+    "name": "Prasidh Krishna",
+    "photo": "/players/prasidh-krishna.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 51, "runs": 9, "strikeRate": 60.0, "battingAverage": 3.0, "wickets": 49, "economy": 8.92, "bestFigures": "4/30", "iplTitles": 0 }
+  },
+  {
+    "id": "p051",
+    "name": "Sandeep Sharma",
+    "photo": "/players/sandeep-sharma.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 127, "runs": 54, "strikeRate": 75.0, "battingAverage": 9.0, "wickets": 137, "economy": 7.88, "bestFigures": "5/18", "iplTitles": 0 }
+  },
+  {
+    "id": "p052",
+    "name": "Mohit Sharma",
+    "photo": "/players/mohit-sharma.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 112, "runs": 124, "strikeRate": 94.66, "battingAverage": 9.54, "wickets": 132, "economy": 8.69, "bestFigures": "5/10", "iplTitles": 0 }
+  },
+  {
+    "id": "p053",
+    "name": "Ashish Nehra",
+    "photo": "/players/ashish-nehra.jpg",
+    "role": "Bowler",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 88, "runs": 41, "strikeRate": 89.13, "battingAverage": 8.2, "wickets": 106, "economy": 7.85, "bestFigures": "4/10", "iplTitles": 1 }
+  },
+  {
+    "id": "p054",
+    "name": "Mitchell Starc",
+    "photo": "/players/mitchell-starc.jpg",
+    "role": "Bowler",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 41, "runs": 105, "strikeRate": 97.22, "battingAverage": 15.0, "wickets": 51, "economy": 8.21, "bestFigures": "4/15", "iplTitles": 1 }
+  },
+  {
+    "id": "p055",
+    "name": "Pat Cummins",
+    "photo": "/players/pat-cummins.jpg",
+    "role": "Bowler",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 58, "runs": 515, "strikeRate": 149.71, "battingAverage": 18.39, "wickets": 63, "economy": 8.75, "bestFigures": "4/34", "iplTitles": 0 }
+  },
+  {
+    "id": "p056",
+    "name": "Trent Boult",
+    "photo": "/players/trent-boult.jpg",
+    "role": "Bowler",
+    "nationality": "New Zealand",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 104, "runs": 85, "strikeRate": 104.94, "battingAverage": 10.63, "wickets": 121, "economy": 8.29, "bestFigures": "4/18", "iplTitles": 1 }
+  },
+  {
+    "id": "p057",
+    "name": "Kagiso Rabada",
+    "photo": "/players/kagiso-rabada.jpg",
+    "role": "Bowler",
+    "nationality": "South Africa",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 80, "runs": 206, "strikeRate": 108.42, "battingAverage": 12.12, "wickets": 117, "economy": 8.48, "bestFigures": "4/21", "iplTitles": 0 }
+  },
+  {
+    "id": "p058",
+    "name": "Lasith Malinga",
+    "photo": "/players/lasith-malinga.jpg",
+    "role": "Bowler",
+    "nationality": "Sri Lanka",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 122, "runs": 88, "strikeRate": 88.89, "battingAverage": 5.5, "wickets": 170, "economy": 7.14, "bestFigures": "5/13", "iplTitles": 4 }
+  },
+  {
+    "id": "p059",
+    "name": "Josh Hazlewood",
+    "photo": "/players/josh-hazlewood.jpg",
+    "role": "Bowler",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 27, "runs": 19, "strikeRate": 73.08, "battingAverage": 9.5, "wickets": 35, "economy": 8.06, "bestFigures": "4/25", "iplTitles": 1 }
+  },
+  {
+    "id": "p060",
+    "name": "Jofra Archer",
+    "photo": "/players/jofra-archer.jpg",
+    "role": "Bowler",
+    "nationality": "England",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 40, "runs": 199, "strikeRate": 154.26, "battingAverage": 14.21, "wickets": 48, "economy": 7.43, "bestFigures": "3/15", "iplTitles": 0 }
+  },
+  {
+    "id": "p061",
+    "name": "Matheesha Pathirana",
+    "photo": "/players/matheesha-pathirana.jpg",
+    "role": "Bowler",
+    "nationality": "Sri Lanka",
+    "isOverseas": true,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 20, "runs": 0, "strikeRate": 0, "battingAverage": 0, "wickets": 34, "economy": 7.88, "bestFigures": "4/28", "iplTitles": 1 }
+  },
+  {
+    "id": "p062",
+    "name": "Dale Steyn",
+    "photo": "/players/dale-steyn.jpg",
+    "role": "Bowler",
+    "nationality": "South Africa",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 95, "runs": 167, "strikeRate": 104.38, "battingAverage": 8.35, "wickets": 97, "economy": 6.91, "bestFigures": "3/8", "iplTitles": 0 }
+  },
+  {
+    "id": "p063",
+    "name": "Lockie Ferguson",
+    "photo": "/players/lockie-ferguson.jpg",
+    "role": "Bowler",
+    "nationality": "New Zealand",
+    "isOverseas": true,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 45, "runs": 68, "strikeRate": 133.33, "battingAverage": 9.71, "wickets": 46, "economy": 8.95, "bestFigures": "4/28", "iplTitles": 1 }
+  },
+  {
+    "id": "p064",
+    "name": "Anrich Nortje",
+    "photo": "/players/anrich-nortje.jpg",
+    "role": "Bowler",
+    "nationality": "South Africa",
+    "isOverseas": true,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 46, "runs": 49, "strikeRate": 100.0, "battingAverage": 8.17, "wickets": 60, "economy": 8.96, "bestFigures": "3/33", "iplTitles": 0 }
+  },
+  {
+    "id": "p065",
+    "name": "Hardik Pandya",
+    "photo": "/players/hardik-pandya.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 137, "runs": 2525, "strikeRate": 145.61, "battingAverage": 28.69, "wickets": 64, "economy": 9.06, "bestFigures": "3/20", "iplTitles": 5 }
+  },
+  {
+    "id": "p066",
+    "name": "Ravindra Jadeja",
+    "photo": "/players/ravindra-jadeja.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 240, "runs": 2959, "strikeRate": 129.72, "battingAverage": 27.4, "wickets": 160, "economy": 7.62, "bestFigures": "5/16", "iplTitles": 4 }
+  },
+  {
+    "id": "p067",
+    "name": "Axar Patel",
+    "photo": "/players/axar-patel.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 150, "runs": 1653, "strikeRate": 130.88, "battingAverage": 21.47, "wickets": 123, "economy": 7.28, "bestFigures": "4/21", "iplTitles": 0 }
+  },
+  {
+    "id": "p068",
+    "name": "Yuvraj Singh",
+    "photo": "/players/yuvraj-singh.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 132, "runs": 2750, "strikeRate": 129.72, "battingAverage": 24.77, "wickets": 36, "economy": 7.44, "bestFigures": "4/29", "iplTitles": 2 }
+  },
+  {
+    "id": "p069",
+    "name": "Venkatesh Iyer",
+    "photo": "/players/venkatesh-iyer.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 51, "runs": 1326, "strikeRate": 137.13, "battingAverage": 31.57, "wickets": 3, "economy": 9.3, "bestFigures": "2/29", "iplTitles": 1 }
+  },
+  {
+    "id": "p070",
+    "name": "Nitish Kumar Reddy",
+    "photo": "/players/nitish-kumar-reddy.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 15, "runs": 303, "strikeRate": 142.92, "battingAverage": 33.67, "wickets": 3, "economy": 11.62, "bestFigures": "2/33", "iplTitles": 0 }
+  },
+  {
+    "id": "p071",
+    "name": "Abhishek Sharma",
+    "photo": "/players/abhishek-sharma.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 63, "runs": 1377, "strikeRate": 155.24, "battingAverage": 25.5, "wickets": 11, "economy": 8.5, "bestFigures": "2/24", "iplTitles": 0 }
+  },
+  {
+    "id": "p072",
+    "name": "Krunal Pandya",
+    "photo": "/players/krunal-pandya.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 127, "runs": 1647, "strikeRate": 132.82, "battingAverage": 22.56, "wickets": 76, "economy": 7.37, "bestFigures": "3/14", "iplTitles": 3 }
+  },
+  {
+    "id": "p073",
+    "name": "Washington Sundar",
+    "photo": "/players/washington-sundar.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 60, "runs": 378, "strikeRate": 116.31, "battingAverage": 14.0, "wickets": 37, "economy": 7.55, "bestFigures": "3/16", "iplTitles": 0 }
+  },
+  {
+    "id": "p074",
+    "name": "Shardul Thakur",
+    "photo": "/players/shardul-thakur.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 95, "runs": 307, "strikeRate": 138.91, "battingAverage": 12.28, "wickets": 94, "economy": 9.22, "bestFigures": "4/36", "iplTitles": 2 }
+  },
+  {
+    "id": "p075",
+    "name": "Yusuf Pathan",
+    "photo": "/players/yusuf-pathan.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 174, "runs": 3204, "strikeRate": 142.97, "battingAverage": 29.13, "wickets": 42, "economy": 7.4, "bestFigures": "3/20", "iplTitles": 3 }
+  },
+  {
+    "id": "p076",
+    "name": "Rahul Tewatia",
+    "photo": "/players/rahul-tewatia.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 93, "runs": 1013, "strikeRate": 134.89, "battingAverage": 24.71, "wickets": 32, "economy": 7.89, "bestFigures": "3/18", "iplTitles": 1 }
+  },
+  {
+    "id": "p077",
+    "name": "Shahrukh Khan",
+    "photo": "/players/shahrukh-khan.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 40, "runs": 553, "strikeRate": 141.07, "battingAverage": 20.48, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p078",
+    "name": "Ramandeep Singh",
+    "photo": "/players/ramandeep-singh.jpg",
+    "role": "All-rounder",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 20, "runs": 170, "strikeRate": 173.47, "battingAverage": 28.33, "wickets": 6, "economy": 9.5, "bestFigures": "3/20", "iplTitles": 1 }
+  },
+  {
+    "id": "p079",
+    "name": "Andre Russell",
+    "photo": "/players/andre-russell.jpg",
+    "role": "All-rounder",
+    "nationality": "West Indies",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 127, "runs": 2484, "strikeRate": 174.93, "battingAverage": 29.22, "wickets": 115, "economy": 9.3, "bestFigures": "5/15", "iplTitles": 2 }
+  },
+  {
+    "id": "p080",
+    "name": "Sunil Narine",
+    "photo": "/players/sunil-narine.jpg",
+    "role": "All-rounder",
+    "nationality": "West Indies",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 177, "runs": 1534, "strikeRate": 165.84, "battingAverage": 17.04, "wickets": 180, "economy": 6.73, "bestFigures": "5/19", "iplTitles": 3 }
+  },
+  {
+    "id": "p081",
+    "name": "Kieron Pollard",
+    "photo": "/players/kieron-pollard.jpg",
+    "role": "All-rounder",
+    "nationality": "West Indies",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 189, "runs": 3412, "strikeRate": 147.32, "battingAverage": 28.67, "wickets": 69, "economy": 8.78, "bestFigures": "4/44", "iplTitles": 5 }
+  },
+  {
+    "id": "p082",
+    "name": "Shane Watson",
+    "photo": "/players/shane-watson.jpg",
+    "role": "All-rounder",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 145, "runs": 3874, "strikeRate": 137.91, "battingAverage": 30.99, "wickets": 92, "economy": 7.93, "bestFigures": "4/29", "iplTitles": 2 }
+  },
+  {
+    "id": "p083",
+    "name": "Dwayne Bravo",
+    "photo": "/players/dwayne-bravo.jpg",
+    "role": "All-rounder",
+    "nationality": "West Indies",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 161, "runs": 1560, "strikeRate": 129.57, "battingAverage": 22.61, "wickets": 183, "economy": 8.38, "bestFigures": "4/22", "iplTitles": 3 }
+  },
+  {
+    "id": "p084",
+    "name": "Glenn Maxwell",
+    "photo": "/players/glenn-maxwell.jpg",
+    "role": "All-rounder",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 134, "runs": 2771, "strikeRate": 156.73, "battingAverage": 24.74, "wickets": 37, "economy": 8.28, "bestFigures": "2/15", "iplTitles": 0 }
+  },
+  {
+    "id": "p085",
+    "name": "Marcus Stoinis",
+    "photo": "/players/marcus-stoinis.jpg",
+    "role": "All-rounder",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 96, "runs": 1866, "strikeRate": 142.01, "battingAverage": 28.27, "wickets": 43, "economy": 9.48, "bestFigures": "4/15", "iplTitles": 0 }
+  },
+  {
+    "id": "p086",
+    "name": "Sam Curran",
+    "photo": "/players/sam-curran.jpg",
+    "role": "All-rounder",
+    "nationality": "England",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 59, "runs": 883, "strikeRate": 136.48, "battingAverage": 25.23, "wickets": 58, "economy": 9.65, "bestFigures": "4/11", "iplTitles": 0 }
+  },
+  {
+    "id": "p087",
+    "name": "Liam Livingstone",
+    "photo": "/players/liam-livingstone.jpg",
+    "role": "All-rounder",
+    "nationality": "England",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 39, "runs": 939, "strikeRate": 162.46, "battingAverage": 28.45, "wickets": 11, "economy": 8.95, "bestFigures": "3/27", "iplTitles": 0 }
+  },
+  {
+    "id": "p088",
+    "name": "Mitchell Marsh",
+    "photo": "/players/mitchell-marsh.jpg",
+    "role": "All-rounder",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 42, "runs": 665, "strikeRate": 129.63, "battingAverage": 19.56, "wickets": 37, "economy": 8.53, "bestFigures": "4/27", "iplTitles": 0 }
+  },
+  {
+    "id": "p089",
+    "name": "Cameron Green",
+    "photo": "/players/cameron-green.jpg",
+    "role": "All-rounder",
+    "nationality": "Australia",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 29, "runs": 707, "strikeRate": 153.7, "battingAverage": 41.59, "wickets": 16, "economy": 9.07, "bestFigures": "2/27", "iplTitles": 0 }
+  },
+  {
+    "id": "p090",
+    "name": "Marco Jansen",
+    "photo": "/players/marco-jansen.jpg",
+    "role": "All-rounder",
+    "nationality": "South Africa",
+    "isOverseas": true,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 21, "runs": 66, "strikeRate": 111.86, "battingAverage": 8.25, "wickets": 20, "economy": 9.52, "bestFigures": "3/25", "iplTitles": 0 }
+  },
+  {
+    "id": "p091",
+    "name": "MS Dhoni",
+    "photo": "/players/ms-dhoni.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 264, "runs": 5243, "strikeRate": 137.54, "battingAverage": 39.13, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 5 }
+  },
+  {
+    "id": "p092",
+    "name": "Rishabh Pant",
+    "photo": "/players/rishabh-pant.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 111, "runs": 3284, "strikeRate": 148.93, "battingAverage": 35.31, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p093",
+    "name": "KL Rahul",
+    "photo": "/players/kl-rahul.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 132, "runs": 4683, "strikeRate": 134.61, "battingAverage": 45.47, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p094",
+    "name": "Sanju Samson",
+    "photo": "/players/sanju-samson.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 168, "runs": 4419, "strikeRate": 138.96, "battingAverage": 30.69, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p095",
+    "name": "Ishan Kishan",
+    "photo": "/players/ishan-kishan.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 105, "runs": 2644, "strikeRate": 135.87, "battingAverage": 28.43, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 2 }
+  },
+  {
+    "id": "p096",
+    "name": "Dinesh Karthik",
+    "photo": "/players/dinesh-karthik.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 257, "runs": 4842, "strikeRate": 135.36, "battingAverage": 26.32, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 1 }
+  },
+  {
+    "id": "p097",
+    "name": "Robin Uthappa",
+    "photo": "/players/robin-uthappa.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 205, "runs": 4952, "strikeRate": 130.35, "battingAverage": 27.51, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 2 }
+  },
+  {
+    "id": "p098",
+    "name": "Jitesh Sharma",
+    "photo": "/players/jitesh-sharma.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 40, "runs": 730, "strikeRate": 151.14, "battingAverage": 22.81, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p099",
+    "name": "Dhruv Jurel",
+    "photo": "/players/dhruv-jurel.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 27, "runs": 347, "strikeRate": 151.53, "battingAverage": 23.13, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p100",
+    "name": "Prabhsimran Singh",
+    "photo": "/players/prabhsimran-singh.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 34, "runs": 756, "strikeRate": 146.23, "battingAverage": 22.24, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p101",
+    "name": "Jos Buttler",
+    "photo": "/players/jos-buttler.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "England",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 107, "runs": 3582, "strikeRate": 147.53, "battingAverage": 38.11, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 1 }
+  },
+  {
+    "id": "p102",
+    "name": "Heinrich Klaasen",
+    "photo": "/players/heinrich-klaasen.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "South Africa",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 35, "runs": 993, "strikeRate": 168.31, "battingAverage": 38.19, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p103",
+    "name": "Nicholas Pooran",
+    "photo": "/players/nicholas-pooran.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "West Indies",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 76, "runs": 1769, "strikeRate": 162.29, "battingAverage": 32.16, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 0 }
+  },
+  {
+    "id": "p104",
+    "name": "Phil Salt",
+    "photo": "/players/phil-salt.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "England",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 21, "runs": 653, "strikeRate": 175.54, "battingAverage": 34.37, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 1 }
+  },
+  {
+    "id": "p105",
+    "name": "Quinton de Kock",
+    "photo": "/players/quinton-de-kock.jpg",
+    "role": "Wicketkeeper",
+    "nationality": "South Africa",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 107, "runs": 3157, "strikeRate": 134.23, "battingAverage": 31.26, "wickets": 0, "economy": 0, "bestFigures": "-", "iplTitles": 2 }
+  },
+  {
+    "id": "p106",
+    "name": "Yuzvendra Chahal",
+    "photo": "/players/yuzvendra-chahal.jpg",
+    "role": "Spinner",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 160, "runs": 37, "strikeRate": 43.53, "battingAverage": 4.63, "wickets": 205, "economy": 7.84, "bestFigures": "5/40", "iplTitles": 0 }
+  },
+  {
+    "id": "p107",
+    "name": "Kuldeep Yadav",
+    "photo": "/players/kuldeep-yadav.jpg",
+    "role": "Spinner",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 84, "runs": 183, "strikeRate": 91.96, "battingAverage": 15.25, "wickets": 87, "economy": 8.21, "bestFigures": "4/14", "iplTitles": 0 }
+  },
+  {
+    "id": "p108",
+    "name": "Ravichandran Ashwin",
+    "photo": "/players/ravichandran-ashwin.jpg",
+    "role": "Spinner",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 212, "runs": 800, "strikeRate": 118.17, "battingAverage": 13.79, "wickets": 180, "economy": 7.12, "bestFigures": "4/34", "iplTitles": 2 }
+  },
+  {
+    "id": "p109",
+    "name": "Varun Chakaravarthy",
+    "photo": "/players/varun-chakaravarthy.jpg",
+    "role": "Spinner",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 71, "runs": 24, "strikeRate": 60.0, "battingAverage": 4.8, "wickets": 83, "economy": 7.56, "bestFigures": "5/20", "iplTitles": 1 }
+  },
+  {
+    "id": "p110",
+    "name": "Ravi Bishnoi",
+    "photo": "/players/ravi-bishnoi.jpg",
+    "role": "Spinner",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 66, "runs": 35, "strikeRate": 74.47, "battingAverage": 5.0, "wickets": 63, "economy": 7.77, "bestFigures": "3/24", "iplTitles": 0 }
+  },
+  {
+    "id": "p111",
+    "name": "Harbhajan Singh",
+    "photo": "/players/harbhajan-singh.jpg",
+    "role": "Spinner",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 163, "runs": 833, "strikeRate": 138.14, "battingAverage": 15.72, "wickets": 150, "economy": 7.08, "bestFigures": "5/18", "iplTitles": 4 }
+  },
+  {
+    "id": "p112",
+    "name": "Amit Mishra",
+    "photo": "/players/amit-mishra.jpg",
+    "role": "Spinner",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 162, "runs": 381, "strikeRate": 91.59, "battingAverage": 11.21, "wickets": 174, "economy": 7.38, "bestFigures": "5/17", "iplTitles": 0 }
+  },
+  {
+    "id": "p113",
+    "name": "Piyush Chawla",
+    "photo": "/players/piyush-chawla.jpg",
+    "role": "Spinner",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 192, "runs": 624, "strikeRate": 110.25, "battingAverage": 11.77, "wickets": 192, "economy": 7.96, "bestFigures": "4/17", "iplTitles": 2 }
+  },
+  {
+    "id": "p114",
+    "name": "Rahul Chahar",
+    "photo": "/players/rahul-chahar.jpg",
+    "role": "Spinner",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 50,
+    "stats": { "matches": 78, "runs": 127, "strikeRate": 100.79, "battingAverage": 8.47, "wickets": 75, "economy": 7.72, "bestFigures": "4/27", "iplTitles": 2 }
+  },
+  {
+    "id": "p115",
+    "name": "Suyash Sharma",
+    "photo": "/players/suyash-sharma.jpg",
+    "role": "Spinner",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 20,
+    "stats": { "matches": 13, "runs": 0, "strikeRate": 0, "battingAverage": 0, "wickets": 10, "economy": 8.65, "bestFigures": "3/30", "iplTitles": 1 }
+  },
+  {
+    "id": "p116",
+    "name": "Sai Kishore",
+    "photo": "/players/sai-kishore.jpg",
+    "role": "Spinner",
+    "nationality": "India",
+    "isOverseas": false,
+    "basePriceLakhs": 20,
+    "stats": { "matches": 10, "runs": 13, "strikeRate": 216.67, "battingAverage": 13.0, "wickets": 13, "economy": 8.32, "bestFigures": "4/33", "iplTitles": 2 }
+  },
+  {
+    "id": "p117",
+    "name": "Rashid Khan",
+    "photo": "/players/rashid-khan.jpg",
+    "role": "Spinner",
+    "nationality": "Afghanistan",
+    "isOverseas": true,
+    "basePriceLakhs": 200,
+    "stats": { "matches": 121, "runs": 545, "strikeRate": 162.69, "battingAverage": 14.34, "wickets": 149, "economy": 6.82, "bestFigures": "4/24", "iplTitles": 1 }
+  },
+  {
+    "id": "p118",
+    "name": "Noor Ahmad",
+    "photo": "/players/noor-ahmad.jpg",
+    "role": "Spinner",
+    "nationality": "Afghanistan",
+    "isOverseas": true,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 23, "runs": 14, "strikeRate": 73.68, "battingAverage": 4.67, "wickets": 24, "economy": 8.04, "bestFigures": "3/37", "iplTitles": 0 }
+  },
+  {
+    "id": "p119",
+    "name": "Imran Tahir",
+    "photo": "/players/imran-tahir.jpg",
+    "role": "Spinner",
+    "nationality": "South Africa",
+    "isOverseas": true,
+    "basePriceLakhs": 150,
+    "stats": { "matches": 59, "runs": 33, "strikeRate": 89.19, "battingAverage": 6.6, "wickets": 82, "economy": 7.76, "bestFigures": "4/12", "iplTitles": 2 }
+  },
+  {
+    "id": "p120",
+    "name": "Maheesh Theekshana",
+    "photo": "/players/maheesh-theekshana.jpg",
+    "role": "Spinner",
+    "nationality": "Sri Lanka",
+    "isOverseas": true,
+    "basePriceLakhs": 100,
+    "stats": { "matches": 27, "runs": 7, "strikeRate": 77.78, "battingAverage": 7.0, "wickets": 25, "economy": 7.66, "bestFigures": "4/33", "iplTitles": 1 }
+  }
+]
