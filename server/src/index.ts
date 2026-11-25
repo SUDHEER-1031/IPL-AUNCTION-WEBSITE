@@ -17,11 +17,13 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const clientDistPath = path.resolve(__dirname, '../../client/dist');
 
 const app = express();
-const allowedOrigins = config.corsOrigin.split(',').map((o) => o.trim());
+const corsOriginOption: boolean | string[] = config.corsOrigin
+  ? config.corsOrigin.split(',').map((o) => o.trim())
+  : true;
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: corsOriginOption,
     credentials: true,
   }),
 );
@@ -52,7 +54,7 @@ if (fs.existsSync(clientDistPath)) {
 const httpServer = http.createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: allowedOrigins,
+    origin: corsOriginOption,
     credentials: true,
   },
 });

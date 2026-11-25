@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .env
+.jwt_secret
 *.db
 *.db-shm
 *.db-wal
