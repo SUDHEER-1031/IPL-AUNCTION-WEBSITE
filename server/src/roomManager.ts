@@ -743,10 +743,13 @@ export class RoomManager {
     }
 
     const newAmount = validation.nextBidLakhs;
-    db.prepare(
-      `INSERT INTO bids (room_code, player_id, team_id, member_id, amount_lakhs, created_at)
-       VALUES (?, ?, ?, ?, ?, ?)`,
-    ).run(roomCode, player.id, teamSnapshot.teamId, member.id, newAmount, Date.now());
+    const now = Date.now();
+    const insertInfo = db
+      .prepare(
+        `INSERT INTO bids (room_code, player_id, team_id, member_id, amount_lakhs, created_at)
+         VALUES (?, ?, ?, ?, ?, ?)`,
+      )
+      .run(roomCode, player.id, teamSnapshot.teamId, member.id, newAmount, now);
 
     rt.currentBidLakhs = newAmount;
     rt.highestBidderTeamId = teamSnapshot.teamId;
@@ -760,7 +763,24 @@ export class RoomManager {
     );
 
     this.startTimer(roomCode, room.timer_seconds * 1000);
-    this.broadcastState(roomCode);
+    this.io?.to(`room:${roomCode}`).emit('auction:bidUpdate', {
+      currentBidLakhs: rt.currentBidLakhs,
+      highestBidderTeamId: rt.highestBidderTeamId,
+      highestBidderName: rt.highestBidderName,
+      vetoJumpActive: rt.vetoJumpActive,
+      timerEndsAt: rt.timerEndsAt,
+      latestBid: {
+        id: Number(insertInfo.lastInsertRowid),
+        playerId: player.id,
+        playerName: player.name,
+        teamId: teamSnapshot.teamId,
+        memberName: member.displayName,
+        amountLakhs: newAmount,
+        createdAt: now,
+      },
+      commentary: rt.commentary,
+      serverNow: Date.now(),
+    });
     return { ok: true, amountLakhs: newAmount };
   }
 

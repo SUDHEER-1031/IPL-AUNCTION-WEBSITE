@@ -75,10 +75,10 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
       disconnectSocket();
       const socket = io(SOCKET_URL || window.location.origin, {
         auth: { token },
-        transports: ['polling', 'websocket'],
+        transports: ['websocket', 'polling'],
         reconnection: true,
         reconnectionAttempts: Infinity,
-        reconnectionDelay: 1000,
+        reconnectionDelay: 500,
       });
 
       socket.on('connect', () => {
@@ -95,8 +95,55 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
           soundEngine.playBid();
         }
         prevBidCountRef.current = nextState.recentBids.length;
-        setRoomState(nextState);
+        setRoomState((prev) => {
+          // Clear SOLD/UNSOLD overlay immediately once the next player's timer starts
+          if (
+            nextState.currentPlayer &&
+            nextState.timerEndsAt !== null &&
+            (prev?.currentPlayer?.player.id !== nextState.currentPlayer.player.id ||
+              prev?.timerEndsAt === null)
+          ) {
+            setLastResolution(null);
+          }
+          return nextState;
+        });
       });
+
+      socket.on(
+        'auction:bidUpdate',
+        (delta: {
+          currentBidLakhs: number;
+          highestBidderTeamId: string;
+          highestBidderName: string;
+          vetoJumpActive: boolean;
+          timerEndsAt: number | null;
+          latestBid: RoomStatePayload['recentBids'][number];
+          commentary: string[];
+          serverNow: number;
+        }) => {
+          setClockOffsetMs(delta.serverNow - Date.now());
+          soundEngine.playBid();
+          setRoomState((prev) => {
+            if (!prev) return prev;
+            const nextBids = [
+              delta.latestBid,
+              ...prev.recentBids.filter((b) => b.id !== delta.latestBid.id),
+            ].slice(0, 30);
+            prevBidCountRef.current = nextBids.length;
+            return {
+              ...prev,
+              currentBidLakhs: delta.currentBidLakhs,
+              highestBidderTeamId: delta.highestBidderTeamId,
+              highestBidderName: delta.highestBidderName,
+              vetoJumpActive: delta.vetoJumpActive,
+              timerEndsAt: delta.timerEndsAt,
+              recentBids: nextBids,
+              commentary: delta.commentary,
+              serverNow: delta.serverNow,
+            };
+          });
+        },
+      );
 
       socket.on('watchlist:updated', (list: string[]) => {
         setWatchlist(list);

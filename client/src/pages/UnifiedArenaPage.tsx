@@ -74,6 +74,12 @@ export function UnifiedArenaPage() {
 
   const [bidBusy, setBidBusy] = useState(false);
   const [bidError, setBidError] = useState<string | null>(null);
+  const [optimisticBid, setOptimisticBid] = useState<{
+    playerId: string;
+    amountLakhs: number;
+    teamId: string;
+    memberName: string;
+  } | null>(null);
   const [copiedCode, setCopiedCode] = useState(false);
   const [copiedInvite, setCopiedInvite] = useState(false);
 
@@ -88,10 +94,11 @@ export function UnifiedArenaPage() {
   const activeRp = roomState?.currentPlayer ?? null;
   const player = activeRp?.player ?? null;
 
-  // Reset bidBusy & stale error whenever the active player or current bid changes
+  // Reset bidBusy, optimistic state, and stale error whenever the active player or server bid changes
   useEffect(() => {
     setBidBusy(false);
     setBidError(null);
+    setOptimisticBid(null);
   }, [player?.id, roomState?.currentBidLakhs]);
 
   // Auto-switch right panel to Purses & Standings when auction ends
@@ -128,14 +135,24 @@ export function UnifiedArenaPage() {
     (m) => m.role !== 'SPECTATOR' && m.teamId !== null,
   ).length;
 
+  const activeOptimistic =
+    optimisticBid && player && optimisticBid.playerId === player.id ? optimisticBid : null;
+
+  const displayBidLakhs = activeOptimistic ? activeOptimistic.amountLakhs : roomState.currentBidLakhs;
+  const displayHighestTeamId = activeOptimistic
+    ? activeOptimistic.teamId
+    : roomState.highestBidderTeamId;
+  const displayHighestName = activeOptimistic
+    ? activeOptimistic.memberName
+    : roomState.highestBidderName;
+
   const nextBidLakhs = player
-    ? getNextBidClient(player.basePriceLakhs, roomState.currentBidLakhs, roomState.vetoJumpActive)
+    ? getNextBidClient(player.basePriceLakhs, displayBidLakhs, roomState.vetoJumpActive)
     : 0;
 
   const isResolvingHammer =
-    Boolean(lastResolution) ||
-    ((roomState.status === 'LIVE' || roomState.status === 'ACCELERATED') &&
-      roomState.timerEndsAt === null);
+    (roomState.status === 'LIVE' || roomState.status === 'ACCELERATED') &&
+    roomState.timerEndsAt === null;
 
   let bidDisabledReason: string | null = null;
   if (!connected) {
@@ -148,7 +165,7 @@ export function UnifiedArenaPage() {
     bidDisabledReason = 'Auction is paused by host';
   } else if (!player || isResolvingHammer) {
     bidDisabledReason = 'Hammer falling — next player coming...';
-  } else if (roomState.highestBidderTeamId === myTeam.teamId) {
+  } else if (displayHighestTeamId === myTeam.teamId) {
     bidDisabledReason = 'You already hold the highest bid';
   } else if (myTeam.squadCount >= 11) {
     bidDisabledReason = 'Squad full (11/11 players)';
@@ -158,7 +175,7 @@ export function UnifiedArenaPage() {
     bidDisabledReason = `Insufficient purse (${formatLakhs(myTeam.purseLakhs)} left)`;
   }
 
-  const leadingBrand = getTeamBrand(roomState.highestBidderTeamId);
+  const leadingBrand = getTeamBrand(displayHighestTeamId);
   const isStarred = player ? watchlist.includes(player.id) : false;
 
   const showTeamPicker =
@@ -204,12 +221,20 @@ export function UnifiedArenaPage() {
   };
 
   const handlePlaceBid = async () => {
-    if (bidDisabledReason || bidBusy || !player) return;
+    if (bidDisabledReason || bidBusy || !player || !myTeam) return;
     setBidError(null);
     setBidBusy(true);
+    // Instant 0.01s optimistic UI feedback
+    setOptimisticBid({
+      playerId: player.id,
+      amountLakhs: nextBidLakhs,
+      teamId: myTeam.teamId,
+      memberName: myMember?.displayName ?? myTeam.shortName,
+    });
     try {
-      const res = await emitAction('auction:bid', { expectedAmountLakhs: nextBidLakhs });
+      const res = await emitAction('auction:bid', {});
       if (!res.ok) {
+        setOptimisticBid(null);
         setBidError(res.error || 'Bid rejected');
       }
     } finally {
@@ -616,12 +641,12 @@ export function UnifiedArenaPage() {
               <div className="mt-3 rounded-xl bg-slate-950 text-white px-3.5 py-2.5 flex flex-wrap items-center justify-between gap-3 border border-slate-800">
                 <div>
                   <div className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">
-                    {roomState.currentBidLakhs === null ? 'Opening Bid' : 'Current Highest Bid'}
+                    {displayBidLakhs === null ? 'Opening Bid' : 'Current Highest Bid'}
                   </div>
                   <div className="font-display text-xl sm:text-2xl font-black text-amber-400 leading-tight">
-                    {roomState.currentBidLakhs === null
+                    {displayBidLakhs === null
                       ? formatLakhs(player.basePriceLakhs)
-                      : formatLakhs(roomState.currentBidLakhs)}
+                      : formatLakhs(displayBidLakhs)}
                   </div>
                   {roomState.vetoJumpActive && (
                     <span className="inline-block mt-0.5 px-1.5 py-0.2 rounded bg-purple-500/25 text-purple-300 text-[10px] font-bold">
@@ -630,16 +655,16 @@ export function UnifiedArenaPage() {
                   )}
                 </div>
 
-                {roomState.highestBidderTeamId ? (
+                {displayHighestTeamId ? (
                   <div className="flex items-center gap-2 bg-white/10 px-3 py-1.5 rounded-xl border border-white/15">
-                    <TeamCrest teamId={roomState.highestBidderTeamId} size="sm" />
+                    <TeamCrest teamId={displayHighestTeamId} size="sm" />
                     <div>
                       <div className="text-[9px] uppercase tracking-wider text-emerald-400 font-bold">
                         Leading
                       </div>
                       <div className="font-bold text-xs">{leadingBrand?.name}</div>
                       <div className="text-[10px] text-slate-300">
-                        {roomState.highestBidderName}
+                        {displayHighestName}
                       </div>
                     </div>
                   </div>
